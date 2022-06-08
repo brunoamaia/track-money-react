@@ -1,4 +1,4 @@
-import * as HeaderStyles from '../styles/components/header'
+import * as HeaderStyles from '@/styles/components/header'
 
 function Finance() {
 	return (

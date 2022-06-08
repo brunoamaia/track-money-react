@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
-import { GlobalStyle } from './styles/GlobalStyle'
-import Finance from './pages/Finance'
+import { GlobalStyle } from '@/styles/GlobalStyle'
+import Finance from '@/pages/Finance'
 
 function App() {
 	return (

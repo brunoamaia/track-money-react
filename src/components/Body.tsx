@@ -1,4 +1,4 @@
-import * as BodyStyles from '../styles/components/body'
+import * as BodyStyles from '@/styles/components/body'
 
 function Body() {
 	return (
