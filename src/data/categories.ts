@@ -1,10 +1,4 @@
-interface Category { 
-	[tag: string]: {
-		color: string;
-		expense: boolean;
-		title: string;
-	}
-}
+import { Category } from "@/types/data"
 
 const categories: Category = {
 	food: { title: 'Alimentação', color: 'blue', expense: true },
