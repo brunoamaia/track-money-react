@@ -6,6 +6,15 @@ export const getCurrentMonth = () => {
 	return `${actualDate.getFullYear()}-${actualDate.getMonth()+1}`
 }
 
+export const formatCurrentMonth = (currentMonth: string): string => {
+	const [year, month] = currentMonth.split('-')
+	const months = [
+		'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+	]
+
+	return `${months[parseInt(month) - 1]} de ${year}`
+}
+
 export const filterListByMonth = (list: Item[], date: string): Item[] => {
 	let newList: Item[] = [];
 	let [year, month] = date.split('-')
