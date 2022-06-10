@@ -21,3 +21,13 @@ export const filterListByMonth = (list: Item[], date: string): Item[] => {
 
 	return newList
 }
+
+const _dateFormatting = (value: number): string => value < 10 ? `0${value}` : `${value}`
+
+export const formatDate = (date: Date): string => {
+	let year = date.getFullYear();
+	let month = date.getMonth() + 1;
+	let day = date.getDate()
+
+	return `${_dateFormatting(day)}/${_dateFormatting(month)}/${year}`
+}

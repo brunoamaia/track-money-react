@@ -7,3 +7,14 @@ export const TableColumn = styled.td`
 	padding: 10px 0;
 	text-align: left;
 `
+
+export const Category = styled.div<{color: string}>`
+	display: inline-block;
+	padding: 5px 10px;
+	color: #FFF;
+	background-color: ${props => props.color};
+`
+
+export const Value = styled.div<{expense: boolean}>`
+	color: ${props => props.expense ? 'red' : 'green'}
+`
