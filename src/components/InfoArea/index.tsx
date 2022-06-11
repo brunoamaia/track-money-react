@@ -1,6 +1,6 @@
 import { formatCurrentMonth } from '@/helpers/dateFilter'
 import ResumeItem from '@/components/InfoArea/ResumeItem';
-import * as Stl from '@/styles/components/infoArea';
+import * as Sty from './styles';
 
 interface Props {
 	currentMonth: string
@@ -22,18 +22,18 @@ const InfoArea = ({ currentMonth, expense, income, onMonthChange }: Props) => {
 	const handleNextMonth = () => changeMonth(true)
 
 	return (
-		<Stl.Container>
-			<Stl.MonthArea>
-				<Stl.MonthArrow onClick={handlePrevMonth} >⬅️</Stl.MonthArrow>
-				<Stl.MonthTitle>{formatCurrentMonth(currentMonth)}</Stl.MonthTitle>
-				<Stl.MonthArrow onClick={handleNextMonth}>➡️</Stl.MonthArrow>
-			</Stl.MonthArea>
-			<Stl.ResumeArea>
+		<Sty.Container>
+			<Sty.MonthArea>
+				<Sty.MonthArrow onClick={handlePrevMonth} >⬅️</Sty.MonthArrow>
+				<Sty.MonthTitle>{formatCurrentMonth(currentMonth)}</Sty.MonthTitle>
+				<Sty.MonthArrow onClick={handleNextMonth}>➡️</Sty.MonthArrow>
+			</Sty.MonthArea>
+			<Sty.ResumeArea>
 				<ResumeItem title='Receitas' value={income} />
 				<ResumeItem title='Despesas' value={expense} />
 				<ResumeItem title='Balanço' value={income - expense} color={ (income - expense) < 0 ? 'red' : 'green'} />
-			</Stl.ResumeArea>
-		</Stl.Container>
+			</Sty.ResumeArea>
+		</Sty.Container>
 	)
 }
 
