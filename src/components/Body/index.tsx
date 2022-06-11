@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import TableArea from '@/components/Table/TableArea'
+import TableArea from '@/components/TableArea'
 import categories from '@/data/categories'
 import items from '@/data/items'
 import { filterListByMonth, getCurrentMonth } from '@/helpers/dateFilter'
 import { Item } from '@/types/data'
-import InfoArea from '../InfoArea'
+import InfoArea from '@/components/InfoArea' 
 import * as Sty from './styles'
 
 function Body() {
@@ -35,7 +35,6 @@ function Body() {
 
 		setExpense(expenseCount)
 		setIncome(incomeCount)
-
 
 	}, [filteredList])
 

@@ -1,4 +1,4 @@
-import TableItem from '../TableItem'
+import TableItem from '@/components/TableArea/TableItem'
 import { Item } from '@/types/data'
 import * as Sty from './styles'
 
