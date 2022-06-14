@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
+import InfoArea from '@/components/InfoArea'
+import InputArea from '@/components/InputArea'
 import TableArea from '@/components/TableArea'
 import categories from '@/data/categories'
 import items from '@/data/items'
 import { filterListByMonth, getCurrentMonth } from '@/helpers/dateFilter'
 import { Item } from '@/types/data'
-import InfoArea from '@/components/InfoArea' 
 import * as Sty from './styles'
 
 function Body() {
@@ -16,6 +17,14 @@ function Body() {
 
 	const handleMonthChange = (newMonth: string) => {
 		setCurrentMonth(newMonth)
+	}
+
+	const handleAddItem = (item: Item) => {
+		let newList = [...list]
+		
+		newList.push(item)
+		
+		setList(newList);
 	}
 
 	useEffect(() => {
@@ -46,6 +55,7 @@ function Body() {
 				income={income}
 				onMonthChange={handleMonthChange}
 			/>
+			<InputArea onAddItem={handleAddItem}/>
 			<TableArea list={filteredList} />
 		</Sty.Body>
 	)
