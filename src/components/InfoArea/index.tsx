@@ -24,9 +24,9 @@ const InfoArea = ({ currentMonth, expense, income, onMonthChange }: Props) => {
 	return (
 		<Sty.Container>
 			<Sty.MonthArea>
-				<Sty.MonthArrow onClick={handlePrevMonth} >⬅️</Sty.MonthArrow>
+				<Sty.MonthArrow onClick={handlePrevMonth}>&#8656;</Sty.MonthArrow>
 				<Sty.MonthTitle>{formatCurrentMonth(currentMonth)}</Sty.MonthTitle>
-				<Sty.MonthArrow onClick={handleNextMonth}>➡️</Sty.MonthArrow>
+				<Sty.MonthArrow onClick={handleNextMonth}>&#8658;</Sty.MonthArrow>
 			</Sty.MonthArea>
 			<Sty.ResumeArea>
 				<ResumeItem title='Receitas' value={income} />

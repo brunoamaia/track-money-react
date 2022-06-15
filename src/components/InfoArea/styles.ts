@@ -15,11 +15,24 @@ export const MonthArea = styled.div`
     align-items: center;
 `;
 
-export const MonthArrow = styled.div`
+export const MonthArrow = styled.button`
+	display: flex;
+	align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 40px;
+	height: 30px;
     text-align: center;
     font-size: 25px;
     cursor: pointer;
+	color: white;
+	background-color: #0078D7;
+	border: 2px solid #333;
+	border-radius: 5px;
+
+	&:focus {
+		outline: none;
+	}
 `;
 
 export const MonthTitle = styled.div`

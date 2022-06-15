@@ -9,6 +9,7 @@ export const TableColumn = styled.td`
 `
 
 export const Category = styled.div<{color: string}>`
+	border-radius: 5px;
 	display: inline-block;
 	padding: 5px 10px;
 	color: #FFF;

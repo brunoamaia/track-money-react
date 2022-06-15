@@ -10,21 +10,21 @@ interface Props {
 
 const InputArea = ({ onAddItem }: Props) => {
 	const actualDate = formatDateToBrowser(new Date())
-	const [ selectedDate, setSelectedDate] = useState<string>(actualDate);
-	const [ selectedCategory, setSelectedCategory] = useState<string>('');
-	const [ selectedTitle, setSelectedTitle] = useState<string>('');
-	const [ selectedValue, setSelectedValue] = useState<number>(0);
+	const [ formDate, setFormDate] = useState<string>(actualDate);
+	const [ formCategory, setFormCategory] = useState<string>('');
+	const [ formTitle, setFormTitle] = useState<string>('');
+	const [ formValue, setFormValue] = useState<number>(0);
 	const categoryKeys: string[] = Object.keys(categories);
 
 	const resetFormData = () => {
-		setSelectedCategory('')
-		setSelectedDate(actualDate)
-		setSelectedTitle('')
-		setSelectedValue(0)
+		setFormCategory('')
+		setFormDate(actualDate)
+		setFormTitle('')
+		setFormValue(0)
 	}
 
 	const getFormatDataToSave = (): Date => {
-		const [year, month, day] = selectedDate.split('-')
+		const [year, month, day] = formDate.split('-')
 		
 		return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
 	}
@@ -33,9 +33,9 @@ const InputArea = ({ onAddItem }: Props) => {
 		const formatDate = getFormatDataToSave()
 		const newItem: Item = {
 			date: formatDate,
-			category: selectedCategory,
-			title: selectedTitle,
-			value: selectedValue
+			category: formCategory,
+			title: formTitle,
+			value: formValue
 		}
 		
 		onAddItem(newItem)
@@ -52,8 +52,8 @@ const InputArea = ({ onAddItem }: Props) => {
 						type="date"
 						id="date"
 						name="date"
-						value={selectedDate}
-						onChange={(event) => setSelectedDate(event.target.value)}
+						value={formDate}
+						onChange={(event) => setFormDate(event.target.value)}
 						required
 					/>
 				</Sty.Input>
@@ -62,8 +62,8 @@ const InputArea = ({ onAddItem }: Props) => {
 					<select
 					name="category"
 					id="category"
-					onChange={event => setSelectedCategory(event.target.value)}
-					value={selectedCategory}
+					onChange={event => setFormCategory(event.target.value)}
+					value={formCategory}
 					required
 					>
 						<option value={''}>Selecione uma categoria</option>
@@ -81,8 +81,8 @@ const InputArea = ({ onAddItem }: Props) => {
 						type="text"
 						id="title"
 						name="title"
-						value={selectedTitle}
-						onChange={(event) => setSelectedTitle(event.target.value)}
+						value={formTitle}
+						onChange={(event) => setFormTitle(event.target.value)}
 						required
 						/>
 				</Sty.Input>
@@ -94,8 +94,8 @@ const InputArea = ({ onAddItem }: Props) => {
 						name="value"
 						step="0.01"
 						min='0'
-						value={selectedValue}
-						onChange={(event) => setSelectedValue(parseFloat(event.target.value))}
+						value={formValue}
+						onChange={(event) => setFormValue(parseFloat(event.target.value))}
 						required
 					/>
 				</Sty.Input>
