@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { Item } from '@/types/data'
+import { FormEvent, useState } from 'react';
 import categories from '@/data/categories'
+import { formatDateToBrowser } from  '@/helpers/dateFilter'
+import { Item } from '@/types/data'
 import * as Sty from './styles'
 
 interface Props {
@@ -8,25 +9,37 @@ interface Props {
 }
 
 const InputArea = ({ onAddItem }: Props) => {
-	const [ selectedDate, setSelectedDate] = useState<string>();
+	const actualDate = formatDateToBrowser(new Date())
+	const [ selectedDate, setSelectedDate] = useState<string>(actualDate);
 	const [ selectedCategory, setSelectedCategory] = useState<string>('');
 	const [ selectedTitle, setSelectedTitle] = useState<string>('');
-	const [ selectedValue, setSelectedValue] = useState<number>();
-	let categoryKeys: string[] = Object.keys(categories);
+	const [ selectedValue, setSelectedValue] = useState<number>(0);
+	const categoryKeys: string[] = Object.keys(categories);
 
-	const handleAddItem = () => {
-		const newItem: Item = {
-			date: new Date(2022, 6, 10),
-			category: 'salary',
-			title: 'Item de teste',
-			value: 123.45
-		}
-
-		onAddItem(newItem)
+	const resetFormData = () => {
+		setSelectedCategory('')
+		setSelectedDate(actualDate)
+		setSelectedTitle('')
+		setSelectedValue(0)
 	}
 
-	const handleSubmit = (event: any) => {
-		alert(`Titulo: ${selectedTitle}\nData: ${selectedDate}\nCategoria: ${selectedCategory}\nValor: ${selectedValue}`);
+	const getFormatDataToSave = (): Date => {
+		const [year, month, day] = selectedDate.split('-')
+		
+		return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+	}
+
+	const handleSubmit = (event: FormEvent): void => {
+		const formatDate = getFormatDataToSave()
+		const newItem: Item = {
+			date: formatDate,
+			category: selectedCategory,
+			title: selectedTitle,
+			value: selectedValue
+		}
+		
+		onAddItem(newItem)
+		resetFormData()
 		event.preventDefault();
 	}
 
@@ -49,14 +62,14 @@ const InputArea = ({ onAddItem }: Props) => {
 					<select
 					name="category"
 					id="category"
-					onChange={e => setSelectedCategory(e.target.value)}
-					defaultValue={''}
+					onChange={event => setSelectedCategory(event.target.value)}
+					value={selectedCategory}
 					required
 					>
-						<option value={''} selected disabled hidden>Selecione uma categoria</option>
+						<option value={''}>Selecione uma categoria</option>
 						{
 							categoryKeys.map((key, index) => (
-								<option key={index} value={categories[key].title}>{categories[key].title}</option>
+								<option key={index} value={key}>{categories[key].title}</option>
 							))
 						}
 

@@ -39,6 +39,6 @@ export const Input = styled.div`
 		height: 30px;
 		border: 1px solid;
 		border-radius: 5px;
-		background-color: #999;
+		background-color: #DDD;
 	}
 `
