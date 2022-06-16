@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
 	background-color: #BBB;
@@ -9,11 +9,12 @@ export const Container = styled.div`
 	display: flex;
     align-items: center;
 `
+
 export const MonthArea = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
-`;
+`
 
 export const MonthArrow = styled.button`
 	display: flex;
@@ -23,7 +24,7 @@ export const MonthArrow = styled.button`
     width: 40px;
 	height: 30px;
     text-align: center;
-    font-size: 25px;
+    /* font-size: 25px; */
     cursor: pointer;
 	color: white;
 	background-color: #0078D7;
@@ -33,14 +34,14 @@ export const MonthArrow = styled.button`
 	&:focus {
 		outline: none;
 	}
-`;
+`
 
 export const MonthTitle = styled.div`
     flex: 1;
     text-align: center;
-`;
+`
 
 export const ResumeArea = styled.div`
     flex: 2;
     display: flex;
-`;
+`

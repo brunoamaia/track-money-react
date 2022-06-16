@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react'
 import categories from '@/data/categories'
 import { formatDateToBrowser } from  '@/helpers/dateFilter'
 import { Item } from '@/types/data'
@@ -10,11 +10,11 @@ interface Props {
 
 const InputArea = ({ onAddItem }: Props) => {
 	const actualDate = formatDateToBrowser(new Date())
-	const [ formDate, setFormDate] = useState<string>(actualDate);
-	const [ formCategory, setFormCategory] = useState<string>('');
-	const [ formTitle, setFormTitle] = useState<string>('');
-	const [ formValue, setFormValue] = useState<number>(0);
-	const categoryKeys: string[] = Object.keys(categories);
+	const [ formDate, setFormDate] = useState<string>(actualDate)
+	const [ formCategory, setFormCategory] = useState<string>('')
+	const [ formTitle, setFormTitle] = useState<string>('')
+	const [ formValue, setFormValue] = useState<number>(0)
+	const categoryKeys: string[] = Object.keys(categories)
 
 	const resetFormData = () => {
 		setFormCategory('')
@@ -40,7 +40,7 @@ const InputArea = ({ onAddItem }: Props) => {
 		
 		onAddItem(newItem)
 		resetFormData()
-		event.preventDefault();
+		event.preventDefault()
 	}
 
 	return (
@@ -60,16 +60,16 @@ const InputArea = ({ onAddItem }: Props) => {
 				<Sty.Input>
 					<label htmlFor='category'>Categoria</label>
 					<select
-					name="category"
-					id="category"
-					onChange={event => setFormCategory(event.target.value)}
-					value={formCategory}
-					required
+						name="category"
+						id="category"
+						onChange={event => setFormCategory(event.target.value)}
+						value={formCategory}
+						required
 					>
 						<option value={''}>Selecione uma categoria</option>
 						{
 							categoryKeys.map((key, index) => (
-								<option key={index} value={key}>{categories[key].title}</option>
+								<option key={index} value={key}>{ categories[key].title }</option>
 							))
 						}
 
@@ -84,7 +84,7 @@ const InputArea = ({ onAddItem }: Props) => {
 						value={formTitle}
 						onChange={(event) => setFormTitle(event.target.value)}
 						required
-						/>
+					/>
 				</Sty.Input>
 				<Sty.Input>
 					<label htmlFor='value'>Valor</label>

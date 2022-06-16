@@ -10,8 +10,8 @@ const ResumeItem = ({ color, title, value }: Props) => {
 
 	return (
 		<Sty.Container>
-			<Sty.Title>{title}</Sty.Title>
-			<Sty.Info color={color}>R${value}</Sty.Info>
+			<Sty.Title>{ title }</Sty.Title>
+			<Sty.Info color={color}>R${ value }</Sty.Info>
 		</Sty.Container>
 	)
 }

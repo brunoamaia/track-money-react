@@ -1,7 +1,7 @@
 import { Item } from '@/types/data'
 
 export const getCurrentMonth = () => {
-	let actualDate = new Date();
+	const actualDate = new Date()
 
 	return `${actualDate.getFullYear()}-${actualDate.getMonth()+1}`
 }
@@ -16,10 +16,10 @@ export const formatCurrentMonth = (currentMonth: string): string => {
 }
 
 export const filterListByMonth = (list: Item[], date: string): Item[] => {
-	let newList: Item[] = [];
-	let [year, month] = date.split('-')
+	const newList: Item[] = []
+	const [year, month] = date.split('-')
 
-	for (let i in list) {
+	for (const i in list) {
 		if (
 			list[i].date.getFullYear() === parseInt(year) &&
 			list[i].date.getMonth() === parseInt(month) - 1
@@ -34,17 +34,17 @@ export const filterListByMonth = (list: Item[], date: string): Item[] => {
 const _dateFormatting = (value: number): string => value < 10 ? `0${value}` : `${value}`
 
 export const formatDate = (date: Date): string => {
-	let year = date.getFullYear();
-	let month = date.getMonth() + 1;
-	let day = date.getDate()
+	const year = date.getFullYear()
+	const month = date.getMonth() + 1
+	const day = date.getDate()
 
 	return `${_dateFormatting(day)}/${_dateFormatting(month)}/${year}`
 }
 
 export const formatDateToBrowser = (date: Date): string => {
-	let year = date.getFullYear();
-	let month = date.getMonth() + 1;
-	let day = date.getDate()
+	const year = date.getFullYear()
+	const month = date.getMonth() + 1
+	const day = date.getDate()
 
 	return `${year}-${_dateFormatting(month)}-${_dateFormatting(day)}`
 }

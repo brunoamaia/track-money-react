@@ -20,11 +20,11 @@ function Body() {
 	}
 
 	const handleAddItem = (item: Item) => {
-		let newList = [...list]
+		const newList = [...list]
 		
 		newList.push(item)
 		
-		setList(newList);
+		setList(newList)
 	}
 
 	useEffect(() => {
@@ -34,7 +34,7 @@ function Body() {
 	useEffect(() => {
 		let incomeCount = 0, expenseCount = 0
 
-		for (let i in filteredList) {
+		for (const i in filteredList) {
 			if (categories[filteredList[i].category].expense) {
 				expenseCount += filteredList[i].value
 			} else {

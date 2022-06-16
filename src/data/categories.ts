@@ -1,4 +1,4 @@
-import { Category } from "@/types/data"
+import { Category } from '@/types/data'
 
 const categories: Category = {
 	food: { title: 'Alimentação', color: 'blue', expense: true },
