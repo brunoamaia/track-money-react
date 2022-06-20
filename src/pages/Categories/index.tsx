@@ -5,7 +5,7 @@ import Body from '@/components/Body'
 function Categories() {
 	return (
 		<Fragment>
-			<Header />
+			<Header page={'Categorias'} />
 			<Body />
 		</Fragment>
 	)

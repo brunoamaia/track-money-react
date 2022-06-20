@@ -5,7 +5,7 @@ import Body from '@/components/Body'
 function Finance() {
 	return (
 		<Fragment>
-			<Header />
+			<Header page={'Resumo'} />
 			<Body />
 		</Fragment>
 	)
