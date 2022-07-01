@@ -48,7 +48,7 @@ function Body() {
 	}, [filteredList])
 
 	return (
-		<Sty.Body>
+		<Sty.BodyWrapper>
 			<InfoArea 
 				currentMonth={currentMonth}
 				expense={expense}
@@ -57,7 +57,7 @@ function Body() {
 			/>
 			<InputArea onAddItem={handleAddItem}/>
 			<TableArea list={filteredList} />
-		</Sty.Body>
+		</Sty.BodyWrapper>
 	)
 }
 

@@ -3,11 +3,17 @@ import { formatDate } from  '@/helpers/dateFilter'
 import { Item } from '@/types/data'
 import * as Sty from './styles'
 
-interface Props {item: Item}
+interface Props {
+	isLast: boolean
+	item: Item
+	isOdd: boolean
+}
 
-const TableItem = ({ item }: Props) => {
+const TableItem = ({ isLast, item, isOdd }: Props) => {
+	const className = `${isOdd ? 'odd' : 'even'} ${isLast ? 'lastLine' : ''}`
+
 	return (
-		<Sty.TableLine>
+		<Sty.TableLine className={className}>
 			<Sty.TableColumn>{ formatDate(item.date) }</Sty.TableColumn>
 			<Sty.TableColumn>
 				<Sty.Category color={categories[item.category].color}>

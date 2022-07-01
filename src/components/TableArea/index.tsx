@@ -5,6 +5,9 @@ import * as Sty from './styles'
 interface Props {list: Item[]}
 
 const TableArea = ({ list }: Props) => {
+	const isOddLine = (index: number): boolean=> {
+		return index%2 === 1 ? true : false
+	}
 
 	return (
 		<Sty.Table>
@@ -17,13 +20,13 @@ const TableArea = ({ list }: Props) => {
 				</tr>
 
 			</thead>
-			<tbody>
+			<Sty.TableBody>
 				{
 					list.map((item: Item, index: number) => (
-						<TableItem item={item} key={index} />
+						<TableItem isLast={index === list.length - 1} isOdd={isOddLine(index)} item={item} key={index} />
 					))
 				}
-			</tbody>
+			</Sty.TableBody>
 
 		</Sty.Table>
 	)

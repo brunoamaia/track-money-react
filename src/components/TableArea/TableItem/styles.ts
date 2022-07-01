@@ -1,11 +1,21 @@
 import styled from 'styled-components'
 
 export const TableLine = styled.tr`
+	td {
+		border-left: 1px solid black;
+		border-right: 1px solid black;
 
+		&:first-child {
+			border-left: none;
+		}
+		&:last-child {
+			border-right: none;
+		}
+	}
 `
 
 export const TableColumn = styled.td`
-	padding: 10px 0;
+	padding: 10px;
 	text-align: left;
 `
 

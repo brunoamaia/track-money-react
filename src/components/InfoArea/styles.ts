@@ -1,18 +1,19 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+	width: 100%;
 	background-color: #BBB;
-	box-shadow: 0px 0px 5px #000;
-	border-radius: 10px;
-	padding: 20px;
-	margin-top: -40px;
+	padding: 5px 10px;
+	border: 2px solid black;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 	display: flex;
     align-items: center;
 `
 
 export const MonthArea = styled.div`
-    flex: 1;
     display: flex;
+    flex: 1;
     align-items: center;
 `
 
@@ -24,12 +25,11 @@ export const MonthArrow = styled.button`
     width: 40px;
 	height: 30px;
     text-align: center;
-    /* font-size: 25px; */
-    cursor: pointer;
 	color: white;
 	background-color: #0078D7;
 	border: 2px solid #333;
 	border-radius: 5px;
+    cursor: pointer;
 
 	&:focus {
 		outline: none;
