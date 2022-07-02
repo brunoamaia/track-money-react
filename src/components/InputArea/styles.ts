@@ -34,11 +34,31 @@ export const Input = styled.div`
 		font-weight: bold;
 		height: 20px;
 	}
+
+	input {
+		padding-left: 10px;
+	}
 	
 	input, select {
 		height: 30px;
 		border: 1px solid;
 		border-radius: 5px;
 		background-color: #DDD;
+	}
+
+	&:first-of-type {
+		max-width: 130px;
+	}
+
+	&:nth-of-type(2) {
+		max-width: 170px;
+	}
+
+	&:nth-of-type(3) input {
+		padding-right: 10px;
+	}
+	
+	&:last-of-type {
+		max-width: 180px;
 	}
 `
