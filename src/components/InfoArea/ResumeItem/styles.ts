@@ -7,7 +7,6 @@ export const Container = styled.div`
 export const Title = styled.div`
     text-align: center;
     font-weight: bold;
-    color: #333;
     margin-bottom: 5px;
 `
 

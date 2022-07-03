@@ -36,3 +36,9 @@ export const HeaderText = styled.h1`
 	margin-top: -10px;
 	color: #FFF;
 `
+
+export const SwitchToggle = styled.div`
+	position: absolute;
+	top: 10px;
+	right: 10px;
+`

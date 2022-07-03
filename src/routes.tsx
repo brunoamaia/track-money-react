@@ -3,11 +3,14 @@ import Home from '@/pages/Finance'
 import Categories from '@/pages/Categories'
 import NoMatch from '@/pages/NoMatch'
 
-const Router = () => {
+interface Props {
+	switchTheme: () => void
+}
+const Router = ({ switchTheme }: Props) => {
 	return(
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<Home />} />
+				<Route path='/' element={<Home switchTheme={switchTheme} />} />
 				<Route path='/edit/categories' element={<Categories />} />
 				<Route path='*' element={<NoMatch />} />
 			</Routes>

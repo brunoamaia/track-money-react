@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	width: 100%;
-	background-color: #BBB;
+	background-color: ${(props) => props.theme.body};
 	padding: 0 20px;
 	margin: 20px 0;
 `
@@ -41,9 +41,10 @@ export const Input = styled.div`
 	
 	input, select {
 		height: 30px;
-		border: 1px solid;
+		border: 1px solid #111;
 		border-radius: 5px;
-		background-color: #DDD;
+		background-color: ${(props) => props.theme.background};
+		color: ${(props) => props.theme.text}
 	}
 
 	&:first-of-type {

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Table = styled.table`
 	width: 100%;
-	background-color: #BBB;
+	background-color: ${(props) => props.theme.tableBodyDark};
 	padding: 0;
 	margin: 10px 0;
 	border-radius: 10px;
@@ -34,7 +34,7 @@ export const Table = styled.table`
 export const TableHeadColumn = styled.th`
 	padding: 10px;
 	text-align: left;
-	background-color: #EEE;
+	background-color: ${(props) => props.theme.tableHeader};
 	border-top: 2px solid black;
 	border-bottom: 2px solid black;
 	
@@ -52,11 +52,11 @@ export const TableHeadColumn = styled.th`
 
 export const TableBody = styled.tbody`
 	.odd {
-		background-color: #DDD;
+		background-color: ${(props) => props.theme.tableBodyLight};
 	}
 
 	.even {
-		background-color: #CCC;
+		background-color: ${(props) => props.theme.tableBodyDark};
 	}
 
 	.lastLine {

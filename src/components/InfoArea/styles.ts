@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	width: 100%;
-	background-color: #BBB;
+	background-color: ${(props) => props.theme.body};
 	padding: 5px 10px;
 	border: 2px solid black;
 	border-top-left-radius: 10px;

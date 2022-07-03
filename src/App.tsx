@@ -1,13 +1,22 @@
-import { Fragment } from 'react'
+import { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '@/GlobalStyle'
 import Router from './routes'
+import { darkTheme, lightTheme } from '@/Styles/Themes'
 
 function App() {
+	const [isDarkTheme, setIsDarkTheme] = useState(true)
+	const onSwitchTheme = () => {
+		console.log('chamou')
+		console.log(isDarkTheme)
+		setIsDarkTheme(!isDarkTheme)
+	}
+
 	return (
-		<Fragment>
+		<ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
 			<GlobalStyle />
-			<Router />
-		</Fragment>
+			<Router switchTheme={onSwitchTheme} />
+		</ThemeProvider>
 	)
 }
 
