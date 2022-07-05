@@ -1,14 +1,13 @@
+import { useTheme } from '@/hooks/useTheme'
 import * as Sty from './styles'
 
-interface Props {
-	switchTheme: () => void;
-}
+function SwitchTheme() {
+	const { handleChangeTheme } = useTheme()
 
-function SwitchTheme({ switchTheme }: Props) {
 	return (
 		<Sty.Header>
 			<Sty.SliderWrapper id="switch" className="switch">
-				<input type="checkbox" onChange={switchTheme} id="slider" />
+				<input type="checkbox" onChange={handleChangeTheme} id="slider"  />
 				<span className="slider round"></span>
 			</Sty.SliderWrapper>
 		</Sty.Header>

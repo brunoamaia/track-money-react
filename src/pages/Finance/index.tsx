@@ -1,15 +1,11 @@
 import { Fragment } from 'react'
-import Header from '@/components/Header'
 import Body from '@/components/Body'
+import Header from '@/components/Header'
 
-interface Props {
-	switchTheme: () => void;
-}
-
-function Finance({ switchTheme }: Props) {
+function Finance() {
 	return (
 		<Fragment>
-			<Header switchTheme={switchTheme} page={'Resumo'} />
+			<Header page={'Resumo'} />
 			<Body />
 		</Fragment>
 	)

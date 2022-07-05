@@ -1,16 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from '@/pages/Finance'
 import Categories from '@/pages/Categories'
+import Home from '@/pages/Finance'
 import NoMatch from '@/pages/NoMatch'
 
-interface Props {
-	switchTheme: () => void
-}
-const Router = ({ switchTheme }: Props) => {
+const Router = () => {
 	return(
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<Home switchTheme={switchTheme} />} />
+				<Route path='/' element={<Home />} />
 				<Route path='/edit/categories' element={<Categories />} />
 				<Route path='*' element={<NoMatch />} />
 			</Routes>

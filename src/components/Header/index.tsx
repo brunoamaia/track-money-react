@@ -1,14 +1,13 @@
-import * as Sty from './styles'
 import { Link } from 'react-router-dom'
 import SwitchTheme from '@/components/Header/SwitchTheme'
 import icon from '/finance-icon.png'
+import * as Sty from './styles'
 
 interface Props {
 	page: string;
-	switchTheme: () => void;
 }
 
-function Finance({ page, switchTheme }: Props) {
+function Finance({ page }: Props) {
 	return (
 		<Sty.Header>
 			<Sty.SiteLogoWrapper>
@@ -25,7 +24,7 @@ function Finance({ page, switchTheme }: Props) {
 				{ page }
 			</Sty.HeaderText>
 			<Sty.SwitchToggle>
-				<SwitchTheme switchTheme={switchTheme} />
+				<SwitchTheme />
 			</Sty.SwitchToggle>
 		</Sty.Header>
 	)
