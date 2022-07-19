@@ -1,5 +1,5 @@
 import categories from '@/data/categories'
-import { formatDate } from  '@/helpers/dateFilter'
+import { formatDate } from '@/helpers/dateFilter'
 import { Item } from '@/types/data'
 import * as Sty from './styles'
 

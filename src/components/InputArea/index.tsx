@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react'
 import categories from '@/data/categories'
-import { formatDateToBrowser } from  '@/helpers/dateFilter'
+import { formatDateToBrowser } from '@/helpers/dateFilter'
 import { Item } from '@/types/data'
 import * as Sty from './styles'
 

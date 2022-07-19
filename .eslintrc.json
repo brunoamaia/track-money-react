@@ -26,6 +26,7 @@
 		// "import/newline-after-import": "error",
 		"no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
 		// Enforce spaces inside of curly braces in JSX attributes and expressions. 
+		"no-multi-spaces": "error",
 		"react/jsx-curly-spacing": ["error", { "when": "never", "children": { "when": "always" }}],
         "indent": ["error", "tab"],
         "linebreak-style": ["error", "windows"],

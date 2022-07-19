@@ -7,7 +7,7 @@ function SwitchTheme() {
 	return (
 		<Sty.Header>
 			<Sty.SliderWrapper id="switch" className="switch">
-				<input type="checkbox" onChange={handleChangeTheme} id="slider"  />
+				<input type="checkbox" onChange={handleChangeTheme} id="slider" />
 				<span className="slider round"></span>
 			</Sty.SliderWrapper>
 		</Sty.Header>
