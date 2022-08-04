@@ -4,12 +4,16 @@ import * as Sty from './styles'
 interface Props {
 	isOpen: boolean
 	modalTitle: string
+	dimensions?: {
+		height?: string
+		width?: string
+	}
 	onChangeModalState: (newState: boolean) => void
 	onConfirmModalAction: () => void
 	children: JSX.Element
 }
 
-function Modal({ isOpen, modalTitle, onChangeModalState, onConfirmModalAction, children }: Props) {
+function Modal({ isOpen, modalTitle, dimensions, onChangeModalState, onConfirmModalAction, children }: Props) {
 	const className = isOpen ? 'show-modal' : 'hide-modal'
 
 	return (
@@ -19,6 +23,7 @@ function Modal({ isOpen, modalTitle, onChangeModalState, onConfirmModalAction, c
 					onChangeModalState={onChangeModalState}
 					onConfirmModalAction={onConfirmModalAction}
 					modalTitle={modalTitle}
+					dimensions={dimensions}
 				>
 					{ children }
 				</ModalContent>

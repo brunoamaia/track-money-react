@@ -26,4 +26,20 @@ export const ModalBody = styled.div`
 	justify-content: center;
 	align-items: center;
 	z-index: 99999;
+
+	.height-xx-small { height: 300px; }
+	.height-x-small { height: 400px; }
+	.height-small { height: 400px; }
+	.height-medium { height: 500px; }
+	.height-large { height: 600px; }
+	.height-x-large { height: 700px; }
+	.height-xx-large { height: 800px; }
+
+	.width-xx-small { width: 400px; }
+	.width-x-small { width: 500px; }
+	.width-small { width: 600px; }
+	.width-medium { width: 700px; }
+	.width-large { width: 800px; }
+	.width-x-large { width: 900px; }
+	.width-xx-large { width: 950px; }
 `
