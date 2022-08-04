@@ -1,7 +1,7 @@
-import { useCallback } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SwitchTheme from '@/components/Header/SwitchTheme'
-import { useGenericModal } from '@/hooks/useGenericModal'
+import Modal from '@/components/GenericComponents/Modal'
 import icon from '/finance-icon.png'
 import * as Sty from './styles'
 
@@ -10,18 +10,9 @@ interface Props {
 }
 
 function Finance({ page }: Props) {
-	const { openGenericModal } = useGenericModal()
-	const ModalContent = <div>Corpo</div>
-	const title = 'Editar conteúdo'
-	const handleSave = useCallback(() => console.log('Salvar'), [])
-	const modalParameters = {
-		ModalContent,
-		title,
-		confirmAction: () => handleSave
-	}
-	const habilitar = () => {
-		openGenericModal(modalParameters)
-	}
+	const [isOpen, setIsOpen] = useState<boolean>(false)
+	const confirmAction = () => console.log('Salvar')
+	const onChangeModalState = (newState: boolean) => setIsOpen(newState)
 
 	return (
 		<Sty.Header>
@@ -34,9 +25,17 @@ function Finance({ page }: Props) {
 				<div>
 					Sistema Financeiro
 				</div>
-				<button type="button" onClick={habilitar}>
+				<button type="button" onClick={() => onChangeModalState(true)}>
 					Modal
 				</button>
+				<Modal
+					isOpen={isOpen}
+					modalTitle={'Cabeçalho'}
+					onChangeModalState={onChangeModalState}
+					onConfirmModalAction={confirmAction}
+				>
+					<div>Conteúdo</div>
+				</Modal>
 			</Sty.SiteLogoWrapper>
 			<Sty.HeaderText>
 				{ page }

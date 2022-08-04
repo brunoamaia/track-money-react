@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const ModalWrapper = styled.div`
+	color: ${(props) => props.theme.text};
+    font-weight: normal;
+	
 	.hide-modal {
 		display: none;
 		z-index: -1;
@@ -12,7 +15,7 @@ export const ModalWrapper = styled.div`
 	}
 `
 
-export const ModalContent = styled.div`
+export const ModalBody = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -23,15 +26,4 @@ export const ModalContent = styled.div`
 	justify-content: center;
 	align-items: center;
 	z-index: 99999;
-`
-
-export const Container = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	width: 500px;
-	height: 500px;
-	background: ${(props) => props.theme.body};
-	border-radius: 20px;
 `

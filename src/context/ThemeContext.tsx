@@ -4,11 +4,11 @@ interface ThemeContextProps {
 	isDarkTheme: boolean,
 	handleChangeTheme: () => void,
 }
-  
+
 export const ThemeContext = createContext({} as ThemeContextProps)
 
 interface ThemeProps {
-  children: ReactNode
+	children: ReactNode
 }
 
 export function ThemeContextProvider({ children }: ThemeProps){
