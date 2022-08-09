@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import Modal from '@/components/GenericComponents/Modal'
+import { useGenericModal } from '@/hooks/useGenericModal'
 import { Item } from '@/types/data'
+import { medium } from '@/constants/styles/dimensions'
 import edit from '/edit.svg'
 import * as Sty from './styles'
 
@@ -9,31 +9,34 @@ interface Props {
 }
 
 const TableItem = ({ item }: Props) => {
-	const [isOpen, setIsOpen] = useState<boolean>(false)
-	const confirmAction = () => console.log('Editar')
-	const onChangeModalState = (newState: boolean) => {
-		console.log('Modal normal',newState)
-		setIsOpen(newState)
+	const { openGenericModal } = useGenericModal()
+	const title = 'Editar conteúdo'
+	const handleSave = () => console.log('Salvar')
+	const dimensions = {
+		height: medium,
+		width: medium
 	}
+	const ModalContent = (
+		<div>
+			<div> Data: { JSON.stringify(item.date) }</div>
+			<div>Categoria: { item.category }</div>
+			<div>Título: { item.title }</div>
+			<div>Valor: { item.value }</div>
+		</div>
+	)
+	const modalParameters = {
+		dimensions,
+		ModalContent,
+		title,
+		confirmAction: () => handleSave
+	}
+	const habilitar = () => openGenericModal(modalParameters)
 	
 	return (
 		<Sty.EditWrapper className="edit-item">
-			<button type="button" onClick={() => onChangeModalState(true)}>
+			<button type="button" onClick={habilitar}>
 				<img src={edit} />
 			</button>
-			<Modal
-				isOpen={isOpen}
-				modalTitle={'Editar item'}
-				onChangeModalState={onChangeModalState}
-				onConfirmModalAction={confirmAction}
-			>
-				<div>
-					<div> Data: { JSON.stringify(item.date) }</div>
-					<div>Categoria: { item.category }</div>
-					<div>Título: { item.title }</div>
-					<div>Valor: { item.value }</div>
-				</div>
-			</Modal>
 		</Sty.EditWrapper>
 	)
 }
