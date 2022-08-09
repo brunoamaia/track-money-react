@@ -12,7 +12,7 @@ const TableItem = ({ item }: Props) => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 	const confirmAction = () => console.log('Editar')
 	const onChangeModalState = (newState: boolean) => {
-		console.log(newState)
+		console.log('Modal normal',newState)
 		setIsOpen(newState)
 	}
 	
