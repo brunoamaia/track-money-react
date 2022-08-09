@@ -6,7 +6,7 @@ export const Footer = styled.label`
 	justify-content: end;
 	padding: 20px;
 	gap: 10px;
-	border-top: 1px solid ${(props) => props.theme.text};
+	border-top: 1px solid ${(props) => props.theme.text} !important;
 `
 
 export const CancelButton = styled.button`
@@ -15,9 +15,9 @@ export const CancelButton = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: ${(props) => props.theme.text};
-	background: ${(props) => props.theme.body};
-	border: 1px solid ${(props) => props.theme.text};
+	color: ${(props) => props.theme.text} !important;
+	background: ${(props) => props.theme.body} !important;
+	border: 1px solid ${(props) => props.theme.text} !important;
 	border-radius: 8px;
 	cursor: pointer;
 `
@@ -28,9 +28,9 @@ export const ConfirmButton = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: ${(props) => props.theme.text};
-	background: #007AFF;
-	border: 1px solid #3187D5;
+	color: ${(props) => props.theme.text} !important;
+	background: #007AFF !important;
+	border: 1px solid #3187D5 !important;
 	border-radius: 8px;
 	cursor: pointer;
 `

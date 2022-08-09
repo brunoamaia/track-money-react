@@ -1,4 +1,5 @@
 import categories from '@/data/categories'
+import EditItem from './EditItem'
 import { formatDate } from '@/helpers/dateFilter'
 import { Item } from '@/types/data'
 import * as Sty from './styles'
@@ -20,7 +21,12 @@ const TableItem = ({ isLast, item, isOdd }: Props) => {
 					{ categories[item.category].title }
 				</Sty.Category>
 			</Sty.TableColumn>
-			<Sty.TableColumn>{ item.title }</Sty.TableColumn>
+			<Sty.TableColumn>
+				<Sty.TitleArea>
+					{ item.title }
+					<EditItem item={item} />
+				</Sty.TitleArea>
+			</Sty.TableColumn>
 			<Sty.TableColumn>
 				<Sty.Value expense={categories[item.category].expense}>
 					R${ item.value }

@@ -15,7 +15,7 @@ export const CloseButton = styled.button`
 	top: 10px;
 	right: 20px;
 	display: flex;
-	background: ${(props) => props.theme.body};
-	border: none;
+	background: ${(props) => props.theme.body} !important;
+	border: none !important;
 	cursor: pointer;
 `

@@ -12,11 +12,25 @@ export const TableLine = styled.tr`
 			border-right: none;
 		}
 	}
+
+	.edit-item {
+		z-index: -1;
+	}
+
+	&:hover .edit-item {
+		z-index: 10 !important;
+	}
 `
 
 export const TableColumn = styled.td`
 	padding: 10px;
 	text-align: left;
+`
+
+export const TitleArea = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 `
 
 export const Category = styled.div<{color: string}>`

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const ModalWrapper = styled.div`
 	color: ${(props) => props.theme.text};
     font-weight: normal;
-	
 	.hide-modal {
 		display: none;
 		z-index: -1;
@@ -25,7 +24,7 @@ export const ModalBody = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	z-index: 99999;
+	z-index: 1000 !important;
 
 	.height-xx-small { height: 300px; }
 	.height-x-small { height: 400px; }
