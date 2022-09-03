@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import categories from '@/data/categories'
+import { handleEditItem } from '@/helpers/data/editItems'
 import { formatDateToBrowser } from '@/helpers/dateFilter'
 import { useGenericModal } from '@/hooks/useGenericModal'
+import { useItems } from '@/hooks/useItems'
 import { Item } from '@/types/data'
 import * as Sty from './styles'
 
@@ -10,18 +12,13 @@ interface Props {
 }
 
 const EditItem = ({ item }: Props) => {
+	const { itemsInUse, setItemsInUse } = useItems()
 	const { handleConfirmAction, finishConfirmAction } = useGenericModal()
 	const actualDate = formatDateToBrowser(item.date)
 	const [ formDate, setFormDate] = useState<string>(actualDate)
 	const [ formCategory, setFormCategory] = useState<string>(item.category)
 	const [ formTitle, setFormTitle] = useState<string>(item.title)
 	const [ formValue, setFormValue] = useState<number>(item.value)
-	const [list, setList] = useState<Item>({
-		category: formCategory,
-		date: new Date(formDate),
-		title: formTitle,
-		value: formValue
-	})
 	const categoryKeys: string[] = Object.keys(categories)
 
 	const resetFormData = () => {
@@ -37,25 +34,17 @@ const EditItem = ({ item }: Props) => {
 		return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
 	}
 
-	const handleAddItem = (item: Item) => {
-		// const newList = [...list]
-		// newList.push(item)
-		// setList(item)
-		
-		console.log(item)
-		console.log('alterou')
-	}
-
 	const handleSubmit = (): void => {
 		const formatDate = getFormatDataToSave()
 		const newItem: Item = {
 			date: formatDate,
 			category: formCategory,
 			title: formTitle,
-			value: formValue
+			value: formValue,
+			id: item.id
 		}
 		
-		handleAddItem(newItem)
+		handleEditItem(itemsInUse, setItemsInUse, newItem)
 		resetFormData()
 	}
 	

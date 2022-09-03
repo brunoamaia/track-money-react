@@ -1,6 +1,8 @@
 import { FormEvent, useState } from 'react'
 import categories from '@/data/categories'
+import { createNewAlphanumericCode } from '@/helpers/alphanumericGenerateHelpers'
 import { formatDateToBrowser } from '@/helpers/dateFilter'
+import { useItems } from '@/hooks/useItems'
 import { Item } from '@/types/data'
 import * as Sty from './styles'
 
@@ -9,6 +11,7 @@ interface Props {
 }
 
 const InputArea = ({ onAddItem }: Props) => {
+	const { itemsInUse } = useItems()
 	const actualDate = formatDateToBrowser(new Date())
 	const [ formDate, setFormDate] = useState<string>(actualDate)
 	const [ formCategory, setFormCategory] = useState<string>('')
@@ -35,7 +38,8 @@ const InputArea = ({ onAddItem }: Props) => {
 			date: formatDate,
 			category: formCategory,
 			title: formTitle,
-			value: formValue
+			value: formValue,
+			id: createNewAlphanumericCode(itemsInUse)
 		}
 		
 		onAddItem(newItem)

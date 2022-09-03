@@ -3,15 +3,15 @@ import InfoArea from '@/components/InfoArea'
 import InputArea from '@/components/InputArea'
 import TableArea from '@/components/TableArea'
 import categories from '@/data/categories'
-import items from '@/data/items'
 import { filterListByMonth, getCurrentMonth } from '@/helpers/dateFilter'
+import { useItems } from '@/hooks/useItems'
 import { Item } from '@/types/data'
 import * as Sty from './styles'
 
 function Body() {
+	const { itemsInUse, setItemsInUse } = useItems()
 	const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
 	const [filteredList, setFilteredList] = useState<Item[]>([])
-	const [list, setList] = useState(items)
 	const [expense, setExpense] = useState(0)
 	const [income, setIncome] = useState(0)
 
@@ -20,16 +20,16 @@ function Body() {
 	}
 
 	const handleAddItem = (item: Item) => {
-		const newList = [...list]
+		const newList = [...itemsInUse]
 		
 		newList.push(item)
 		
-		setList(newList)
+		setItemsInUse(newList)
 	}
 
 	useEffect(() => {
-		setFilteredList(filterListByMonth(list, currentMonth))
-	}, [list, currentMonth])
+		setFilteredList(filterListByMonth(itemsInUse, currentMonth))
+	}, [itemsInUse, currentMonth])
 
 	useEffect(() => {
 		let incomeCount = 0, expenseCount = 0

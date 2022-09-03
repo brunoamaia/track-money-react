@@ -1,13 +1,16 @@
 import ApplicationTheme from '@/components/ApplicationTheme'
-import { ThemeContextProvider } from '@/context/ThemeContext'
 import { GenericModalContextProvider } from '@/context/GenericModalContext'
+import { ItemsContextProvider } from '@/context/ItemsContext'
+import { ThemeContextProvider } from '@/context/ThemeContext'
 
 function App() {
 
 	return (
 		<ThemeContextProvider>
 			<GenericModalContextProvider>
-				<ApplicationTheme />
+				<ItemsContextProvider>
+					<ApplicationTheme />
+				</ItemsContextProvider>
 			</GenericModalContextProvider>
 		</ThemeContextProvider>
 	)
