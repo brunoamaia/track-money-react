@@ -1,6 +1,7 @@
+import EditItem from '@/components/GenericComponents/ModalContents/EditItem'
 import { useGenericModal } from '@/hooks/useGenericModal'
 import { Item } from '@/types/data'
-import { medium } from '@/constants/styles/dimensions'
+import { small, medium } from '@/constants/styles/dimensions'
 import edit from '/edit.svg'
 import * as Sty from './styles'
 
@@ -14,17 +15,11 @@ const TableItem = ({ item }: Props) => {
 	const handleSave = () => console.log('Salvar')
 	const dimensions = {
 		height: medium,
-		width: medium
+		width: small
 	}
-	const ModalContent = (
-		<div>
-			<div> Data: { JSON.stringify(item.date) }</div>
-			<div>Categoria: { item.category }</div>
-			<div>Título: { item.title }</div>
-			<div>Valor: { item.value }</div>
-		</div>
-	)
+	const ModalContent = <EditItem item={item} />
 	const modalParameters = {
+		nameConfirmAction: 'Editar',
 		dimensions,
 		ModalContent,
 		title,

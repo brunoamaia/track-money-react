@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.text};
   }
 
-  body, input, button, textarea {
+  body, input, button, textarea, select {
     font: 400 16px 'Roboto', sans-serif;
   }
 `
