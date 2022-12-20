@@ -14,4 +14,12 @@ A princípio, a aplicação utilizará:
 - [ ] Testes unitários
 - [ ] Firebase
 
+## Testes
+
+Adicionar as bibliotecas para testes
+
+```powershell
+yarn add --dev vitest jsdom @testing-library/react @testing-library/jest-dom
+```
+
 [Baseado nesse video](https://www.youtube.com/watch?v=_hytKpMc04E)
