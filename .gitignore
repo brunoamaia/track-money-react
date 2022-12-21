@@ -44,3 +44,6 @@ package-lock.json
 *.njsproj
 *.sln
 *.sw?
+
+# local data
+/src/data/localData.ts
