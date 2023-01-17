@@ -15,4 +15,6 @@ function Header() {
 	)
 }
 
+Header.displayName = 'components/GenericComponents/ModalUseContext/ModalContent/Header'
+
 export default Header

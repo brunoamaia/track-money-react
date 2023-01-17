@@ -86,3 +86,5 @@ export function GenericModalContextProvider({ children }: ModalStateProps) {
 		</GenericModalContext.Provider>
 	)
 }
+
+GenericModalContextProvider.displayName = 'context/GenericModalContextProvider'

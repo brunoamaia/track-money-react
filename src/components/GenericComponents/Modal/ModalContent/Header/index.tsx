@@ -18,4 +18,6 @@ function Header({ modalTitle, onChangeModalState }: Props) {
 	)
 }
 
+Header.displayName = 'components/GenericComponents/Modal/ModalContent/Header'
+
 export default Header

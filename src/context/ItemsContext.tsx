@@ -27,3 +27,5 @@ export function ItemsContextProvider({ children }: ItemsProps){
 		</ItemsContext.Provider>
 	)
 }
+
+ItemsContextProvider.displayName = 'context/ItemsContextProvider'

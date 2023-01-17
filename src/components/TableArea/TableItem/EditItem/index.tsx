@@ -1,4 +1,4 @@
-import EditItem from '@/components/GenericComponents/ModalContents/EditItem'
+import ItemData from '@/components/GenericComponents/ModalContents/ItemData'
 import { useGenericModal } from '@/hooks/useGenericModal'
 import { Item } from '@/types/data'
 import { small, medium } from '@/constants/styles/dimensions'
@@ -9,7 +9,7 @@ interface Props {
 	item: Item
 }
 
-const TableItem = ({ item }: Props) => {
+const EditItem = ({ item }: Props) => {
 	const { openGenericModal } = useGenericModal()
 	const title = 'Editar conteúdo'
 	const handleSave = () => console.log('Salvar')
@@ -17,7 +17,7 @@ const TableItem = ({ item }: Props) => {
 		height: medium,
 		width: small
 	}
-	const ModalContent = <EditItem item={item} />
+	const ModalContent = <ItemData item={item} />
 	const modalParameters = {
 		nameConfirmAction: 'Editar',
 		dimensions,
@@ -36,4 +36,6 @@ const TableItem = ({ item }: Props) => {
 	)
 }
 
-export default TableItem
+EditItem.displayName = 'components/TableArea/TableItem/EditItem'
+
+export default EditItem

@@ -37,4 +37,6 @@ const InfoArea = ({ currentMonth, expense, income, onMonthChange }: Props) => {
 	)
 }
 
+InfoArea.displayName = 'components/InfoArea'
+
 export default InfoArea

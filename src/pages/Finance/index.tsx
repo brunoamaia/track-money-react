@@ -13,4 +13,6 @@ function Finance() {
 	)
 }
 
+Finance.displayName = 'pages/Finance'
+
 export default Finance

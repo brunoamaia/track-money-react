@@ -36,4 +36,6 @@ const TableItem = ({ isLast, item, isOdd }: Props) => {
 	)
 }
 
+TableItem.displayName = 'components/TableArea/TableItem'
+
 export default TableItem

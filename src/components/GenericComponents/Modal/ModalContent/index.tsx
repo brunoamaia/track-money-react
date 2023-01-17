@@ -30,4 +30,6 @@ function ModalContent({ modalTitle, dimensions, onChangeModalState, onConfirmMod
 	)
 }
 
+ModalContent.displayName = 'components/GenericComponents/Modal/ModalContent'
+
 export default ModalContent

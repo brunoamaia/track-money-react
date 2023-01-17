@@ -109,4 +109,6 @@ const InputArea = ({ onAddItem }: Props) => {
 	)
 }
 
+InputArea.displayName = 'components/InputArea'
+
 export default InputArea

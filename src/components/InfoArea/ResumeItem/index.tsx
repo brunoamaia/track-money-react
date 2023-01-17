@@ -16,4 +16,6 @@ const ResumeItem = ({ color, title, value }: Props) => {
 	)
 }
 
+ResumeItem.displayName = 'components/InfoArea/ResumeItem'
+
 export default ResumeItem

@@ -14,4 +14,6 @@ function Footer({onChangeModalState, onConfirmModalAction}: Props) {
 	)
 }
 
+Footer.displayName = 'components/GenericComponents/Modal/ModalContent/Footer'
+
 export default Footer

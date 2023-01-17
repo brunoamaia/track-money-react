@@ -15,4 +15,6 @@ function ApplicationTheme() {
 	)
 }
 
+ApplicationTheme.displayName = 'components/ApplicationTheme'
+
 export default ApplicationTheme

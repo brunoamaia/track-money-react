@@ -11,4 +11,6 @@ function Categories() {
 	)
 }
 
+Categories.displayName = 'pages/Categories'
+
 export default Categories

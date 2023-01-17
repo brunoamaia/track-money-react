@@ -30,4 +30,6 @@ function Finance({ page }: Props) {
 	)
 }
 
+Finance.displayName = 'components/Header'
+
 export default Finance

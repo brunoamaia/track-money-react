@@ -29,3 +29,5 @@ export function ThemeContextProvider({ children }: ThemeProps){
 		</ThemeContext.Provider>
 	)
 }
+
+ThemeContextProvider.displayName = 'context/ThemeContextProvider'

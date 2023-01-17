@@ -61,4 +61,6 @@ function Body() {
 	)
 }
 
+Body.displayName = 'components/Body'
+
 export default Body

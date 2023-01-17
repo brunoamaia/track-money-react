@@ -16,4 +16,6 @@ function ModalContent() {
 	)
 }
 
+ModalContent.displayName = 'components/GenericComponents/ModalUseContext/ModalContent'
+
 export default ModalContent

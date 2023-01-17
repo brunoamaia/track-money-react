@@ -12,4 +12,6 @@ function ChildrenContent({ children }: Props) {
 	)
 }
 
+ChildrenContent.displayName = 'components/GenericComponents/Modal/ModalContent/ChildrenContent'
+
 export default ChildrenContent

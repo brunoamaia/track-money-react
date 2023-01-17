@@ -15,4 +15,6 @@ function ModalUseContext() {
 	)
 }
 
+ModalUseContext.displayName = 'components/GenericComponents/ModalUseContext'
+
 export default ModalUseContext

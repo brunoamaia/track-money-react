@@ -13,4 +13,6 @@ function Footer() {
 	)
 }
 
+Footer.displayName = 'components/GenericComponents/ModalUseContext/ModalContent/Footer'
+
 export default Footer

@@ -32,4 +32,6 @@ const TableArea = ({ list }: Props) => {
 	)
 }
 
+TableArea.displayName = 'components/TableArea'
+
 export default TableArea

@@ -15,4 +15,6 @@ function NoMatch() {
 	)
 }
 
+NoMatch.displayName = 'pages/NoMatch'
+
 export default NoMatch

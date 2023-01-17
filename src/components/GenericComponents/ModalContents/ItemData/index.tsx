@@ -11,7 +11,7 @@ interface Props {
 	item: Item
 }
 
-const EditItem = ({ item }: Props) => {
+const ItemData = ({ item }: Props) => {
 	const { itemsInUse, setItemsInUse } = useItems()
 	const { handleConfirmAction, finishConfirmAction } = useGenericModal()
 	const actualDate = formatDateToBrowser(item.date)
@@ -117,4 +117,6 @@ const EditItem = ({ item }: Props) => {
 	)
 }
 
-export default EditItem
+ItemData.displayName = 'components/GenericComponents/ModalContents/ItemData'
+
+export default ItemData

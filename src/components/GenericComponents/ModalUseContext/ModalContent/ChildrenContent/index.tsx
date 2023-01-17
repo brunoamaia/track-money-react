@@ -10,4 +10,6 @@ function ChildrenContent() {
 	)
 }
 
+ChildrenContent.displayName = 'components/GenericComponents/ModalUseContext/ModalContent/ChildrenContent'
+
 export default ChildrenContent

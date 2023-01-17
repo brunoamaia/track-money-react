@@ -14,4 +14,6 @@ function SwitchTheme() {
 	)
 }
 
+SwitchTheme.displayName = 'components/Header/SwitchTheme'
+
 export default SwitchTheme

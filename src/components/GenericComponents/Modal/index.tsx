@@ -32,4 +32,6 @@ function Modal({ isOpen, modalTitle, dimensions, onChangeModalState, onConfirmMo
 	)
 }
 
+Modal.displayName = 'components/GenericComponents/Modal'
+
 export default Modal
