@@ -11,5 +11,5 @@ export const BodyWrapper = styled.div`
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-    align-items: center;
+	align-items: center;
 `

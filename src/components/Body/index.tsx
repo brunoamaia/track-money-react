@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Canvas from '@/components/Canvas'
 import InfoArea from '@/components/InfoArea'
 import InputArea from '@/components/InputArea'
 import TableArea from '@/components/TableArea'
@@ -57,6 +58,7 @@ function Body() {
 			/>
 			<InputArea onAddItem={handleAddItem}/>
 			<TableArea list={filteredList} />
+			<Canvas id={'canvas'} height={300} width={300} />
 		</Sty.BodyWrapper>
 	)
 }

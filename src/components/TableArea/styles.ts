@@ -41,13 +41,13 @@ export const TableHeadColumn = styled.th`
 	&:nth-child(2) {
 		border-left: 1px solid black;
 		border-right: 1px solid black;
-    }
+	}
 	&:nth-child(3) {
 		border-right: 1px solid black;
-    }
+	}
 	&:nth-child(4) {
 		border-right: 2px solid black;
-    }
+	}
 `
 
 export const TableBody = styled.tbody`

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ModalWrapper = styled.div`
 	color: ${(props) => props.theme.text};
-    font-weight: normal;
+	font-weight: normal;
 	.hide-modal {
 		display: none;
 		z-index: -1;

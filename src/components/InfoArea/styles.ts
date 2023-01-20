@@ -8,28 +8,28 @@ export const Container = styled.div`
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	display: flex;
-    align-items: center;
+	align-items: center;
 `
 
 export const MonthArea = styled.div`
-    display: flex;
-    flex: 1;
-    align-items: center;
+	display: flex;
+	flex: 1;
+	align-items: center;
 `
 
 export const MonthArrow = styled.button`
 	display: flex;
 	align-content: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 40px;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 40px;
 	height: 30px;
-    text-align: center;
+	text-align: center;
 	color: white;
 	background-color: #0078D7;
 	border: 2px solid #333;
 	border-radius: 5px;
-    cursor: pointer;
+	cursor: pointer;
 
 	&:focus {
 		outline: none;
@@ -37,11 +37,11 @@ export const MonthArrow = styled.button`
 `
 
 export const MonthTitle = styled.div`
-    flex: 1;
-    text-align: center;
+	flex: 1;
+	text-align: center;
 `
 
 export const ResumeArea = styled.div`
-    flex: 2;
-    display: flex;
+	flex: 2;
+	display: flex;
 `
