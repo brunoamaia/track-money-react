@@ -58,7 +58,7 @@ function Body() {
 			/>
 			<InputArea onAddItem={handleAddItem}/>
 			<TableArea list={filteredList} />
-			<Canvas id={'canvas'} height={300} width={300} />
+			<Canvas currentData={filteredList} id={'canvas'} height={400} width={300} />
 		</Sty.BodyWrapper>
 	)
 }

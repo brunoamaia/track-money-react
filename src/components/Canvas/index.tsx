@@ -1,13 +1,23 @@
+import { useEffect } from 'react'
 import * as Sty from './styles'
+import { Item } from '@/types/data'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import chartController from '@/helpers/canvas/initialState'
 
 interface Props {
-	id: string;
-	width: number;
-	height: number;
+	currentData: Item[]
+	id: string
+	width: number
+	height: number
 }
 
-const Canvas = ({ id, height, width }: Props) => {
+const Canvas = ({ currentData, id, height, width }: Props) => {
 
+	useEffect(() => {
+		chartController(currentData)
+	})
+		
 	return (
 		<Sty.Canvas id={id} height={height} width={width} />
 	)
