@@ -3,7 +3,7 @@ import * as Sty from './styles'
 import { Item } from '@/types/data'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import chartController from '@/helpers/canvas/initialState'
+import chartController from '../../helpers/canvas/initialState'
 
 interface Props {
 	currentData: Item[]
@@ -16,6 +16,7 @@ const Canvas = ({ currentData, id, height, width }: Props) => {
 
 	useEffect(() => {
 		chartController(currentData)
+		
 	})
 		
 	return (
