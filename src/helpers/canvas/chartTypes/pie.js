@@ -53,7 +53,7 @@ const createPieChart = (ctx, centerOfCircle, data, radiusOfCircle) => {
 	}
 }
 
-const asd = (canvas, data) => {
+const drawPieChart = (canvas, data) => {
 	const ctx = canvas.getContext('2d')
 	const width = canvas.attributes.width.value
 	const border = 10
@@ -67,4 +67,4 @@ const asd = (canvas, data) => {
 	removeCenterOfPie(ctx, centerOfCircle, radiusOfCircle)
 }
 
-export default asd
+export default drawPieChart
